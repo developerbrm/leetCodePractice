@@ -5,4 +5,5 @@
 // import "./js/isNumber.js"
 // import "./js/plusOne.js"
 // import "./js/searchInsert.js"
-import "./js/singleNumber.js"
+// import "./js/singleNumber.js"
+import "./js/firstNonReapeatingCh.js"
