@@ -6,4 +6,6 @@
 // import "./js/plusOne.js"
 // import "./js/searchInsert.js"
 // import "./js/singleNumber.js"
-import "./js/firstNonReapeatingCh.js"
+// import "./js/firstNonReapeatingCh.js"
+// import "./js/2SumsNew.js";
+import "./js/valid-parentheses.js";
