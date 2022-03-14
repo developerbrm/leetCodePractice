@@ -1,41 +1,63 @@
 export const isValid = (s) => {
 	if (!!!s || s.length <= 1) return false;
 
-	let result = false;
-
 	const map = new Map();
 
-	for (let i = 0; i < s.length; i++) {
-		map.set(s.at(i), map.get(s.at(i)) + 1 || 1);
-	}
+	map.set("(", 0);
+	map.set("[", 0);
+	map.set("{", 0);
 
-	const pairs = {
-		"(": ")",
-		"[": "]",
-		"{": "}",
+	const updateMap = (char) => {
+		const isBracketLeftOpened = [...map.keys()]
+			.filter((key) => key !== char)
+			.some((key) => map.get(key) !== 0);
+
+		if (isBracketLeftOpened) return false;
+
+		if (map.get(char) <= 0) return false;
+		else map.set(char, map.get(char) - 1);
+
+		return true;
 	};
 
-	let misMatch = false;
-	const mapKeys = [...map.keys()];
-	const pairKeys = [...Object.keys(pairs)];
+	for (let char of s) {
+		switch (char) {
+			case ")": {
+				if (!!!updateMap("(")) return false;
+				break;
+			}
+			case "}": {
+				if (!!!updateMap("{")) return false;
+				break;
+			}
+			case "]": {
+				if (!!!updateMap("[")) return false;
+				break;
+			}
 
-	for (let i = 0; i < mapKeys.length; i++) {
-		if (!!!pairKeys.includes(mapKeys.at(i))) continue;
-
-		if (mapKeys.at(i + 1) !== pairs[mapKeys.at(i)]) misMatch = true;
+			default: {
+				if (!!!["(", "[", "{"].includes(char)) return false;
+				map.set(char, map.get(char) + 1);
+			}
+		}
 	}
 
-	if (misMatch) return false;
+	const isInvalid = [...map.values()].some((value) => value < 0);
 
-	for (let [key, value] of Object.entries(pairs)) {
-		if (map.get(key) !== map.get(value)) return false;
-	}
+	if (isInvalid) return false;
 
 	return true;
 };
 
-["([)]", "()", "()[]{}", "(]", "(){}}{", "", "{{{}}}", "[[]]{}[][]"].forEach(
-	(str) => {
-		console.log(str, isValid(str));
-	}
-);
+[
+	"([)]",
+	// "()",
+	// "()[]{}",
+	// "(]",
+	// "(){}}{",
+	// "",
+	// "{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}",
+	// "[[]]{}[][]",
+].forEach((str) => {
+	console.log(str, isValid(str));
+});
