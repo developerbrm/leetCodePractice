@@ -10,4 +10,5 @@
 // export * from "./2SumsNew.js";
 // export * from "./3Sum.js";
 // export * from "./majorityElement.js";
-export * from "./reverseString.js";
+// export * from "./reverseString.js";
+export * from "./moveZeroes.js";
