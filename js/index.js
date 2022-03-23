@@ -13,4 +13,5 @@
 // export * from "./reverseString.js";
 // export * from "./moveZeroes.js";
 // export * from "./sortedSquares.js";
-export * from "./missingNumber.js";
+// export * from "./missingNumber.js";
+export * from "./titleToNumber.js";
