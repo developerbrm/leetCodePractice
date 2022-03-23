@@ -14,4 +14,5 @@
 // export * from "./moveZeroes.js";
 // export * from "./sortedSquares.js";
 // export * from "./missingNumber.js";
-export * from "./titleToNumber.js";
+// export * from "./titleToNumber.js";
+export * from "./intersectTwoArr.js";
