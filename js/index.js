@@ -12,4 +12,5 @@
 // export * from "./majorityElement.js";
 // export * from "./reverseString.js";
 // export * from "./moveZeroes.js";
-export * from "./sortedSquares.js";
+// export * from "./sortedSquares.js";
+export * from "./missingNumber.js";
