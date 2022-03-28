@@ -15,4 +15,5 @@
 // export * from "./sortedSquares.js";
 // export * from "./missingNumber.js";
 // export * from "./titleToNumber.js";
-export * from "./intersectTwoArr.js";
+// export * from "./intersectTwoArr.js";
+export * from "./intersectionOfTwoArr.js";
