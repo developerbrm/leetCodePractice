@@ -16,4 +16,6 @@
 // export * from "./missingNumber.js";
 // export * from "./titleToNumber.js";
 // export * from "./intersectTwoArr.js";
-export * from "./intersectionOfTwoArr.js";
+// export * from "./intersectionOfTwoArr.js";
+// export * from "./wordBreak.js";
+export * from "./sortColors.js";
