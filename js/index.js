@@ -18,4 +18,4 @@
 // export * from "./intersectTwoArr.js";
 // export * from "./intersectionOfTwoArr.js";
 // export * from "./wordBreak.js";
-export * from "./sortColors.js";
+export * from "./myPow.js";
