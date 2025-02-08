@@ -1,8 +1,13 @@
 function majorityElement(nums: number[]): number {
   const elementsMap = new Map();
+  const n = Math.floor(nums.length / 2);
 
   for (const element of nums) {
-    elementsMap.set(element, elementsMap?.get(element) + 1 || 1);
+    const currentCount = elementsMap.get(element) || 1;
+
+    elementsMap.set(element, currentCount + 1);
+
+    if (currentCount > n) return element;
   }
 
   const maxElement = [...elementsMap]
